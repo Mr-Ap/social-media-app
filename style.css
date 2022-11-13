@@ -520,6 +520,153 @@ main .container .rightbar {
 	font-size: 0.8rem;
 }
 
-.rightbar .friend-requests .request .action{
+.rightbar .friend-requests .request .action {
 	margin: 1rem 0;
+}
+
+/* Theme Customization */
+
+.theme-customize {
+	background: rgba(255, 255, 255, 0.5);
+	width: 100vw;
+	height: 100vh;
+	z-index: 100;
+	font-size: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	text-align: center;
+	/* font-size: 0.9rem; */
+}
+
+.theme-customize .card {
+	background: var(--color-white);
+	padding: 2.5rem;
+	border-radius: var(--card-border-radius);
+	width: 50%;
+}
+
+.theme-customize .card .header {
+	margin: 1rem 0;
+}
+
+.theme-customize .card .font-size > div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: var(--color-light);
+	border-radius: var(--border-radius);
+	padding: var(--search-padding);
+}
+
+.theme-customize .card .font-size .choose-font-size {
+	background: var(--color-secondary);
+	flex: 1;
+	height: 0.3rem;
+	margin: 0 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.card .font-size .choose-font-size > span {
+	background-color: var(--color-secondary);
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.card .font-size .choose-font-size > span.active {
+	background-color: var(--color-primary);
+}
+
+.theme-customize .card .color {
+	margin-top: 2rem;
+}
+
+.theme-customize .card .color .choose-color {
+	background: var(--color-light);
+	flex: 1;
+	margin: 0 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: var(--color-light);
+	border-radius: var(--border-radius);
+	padding: 1rem;
+}
+
+.card .color .choose-color > span {
+	width: 2.2rem;
+	height: 2.2rem;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.card .color .choose-color > span:nth-child(1) {
+	background: hsl(252, 75%, 60%);
+}
+
+.card .color .choose-color > span:nth-child(2) {
+	background: hsl(52, 75%, 60%);
+}
+.card .color .choose-color > span:nth-child(3) {
+	background: hsl(352, 75%, 60%);
+}
+.card .color .choose-color > span:nth-child(4) {
+	background: hsl(152, 75%, 60%);
+}
+.card .color .choose-color > span:nth-child(5) {
+	background: hsl(102, 75%, 60%);
+}
+
+.theme-customize .card .background {
+	margin-top: 2rem;
+}
+
+.theme-customize .card .background .choose-bg {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.card .background .choose-bg > div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1rem;
+	cursor: pointer;
+	padding: var(--card-padding);
+	border-radius: 0.4rem;
+}
+
+.card .background .choose-bg > div.active {
+	border: 2px solid var(--color-primary);
+}
+
+.card .background .choose-bg .bg-1 {
+	background-color: var(--color-white);
+	color: var(--color-black);
+}
+
+.card .background .choose-bg .bg-2 {
+	background-color: var(--color-dark);
+	color: var(--color-white);
+}
+
+.card .background .choose-bg .bg-2 {
+	background-color: hsl(252, 30%, 10%);
+	color: var(--color-white);
+}
+
+.card .background .choose-bg > div >span{
+	width: 2rem;
+	height: 2rem;
+	border: 2px solid var(--color-gray);
+	border-radius: 1rem;
+	margin-right: 1rem;
 }
