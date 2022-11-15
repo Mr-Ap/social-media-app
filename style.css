@@ -13,14 +13,18 @@
 /* CSS variables */
 
 :root {
-	--color-white: hsl(252, 30%, 100%);
-	--color-light: hsl(252, 30%, 95%);
+	--primary-color-hue: 252;
+	--dark-color-lightness: 17%;
+	--white-color-lightness: 100%;
+	--light-color-lightness: 95%;
+	--color-white: hsl(252, 30%, var(--white-color-lightness));
+	--color-light: hsl(252, 30%, var(--light-color-lightness));
 	--color-gray: hsl(252, 15%, 65%);
-	--color-primary: hsl(252, 75%, 60%);
+	--color-primary: hsl(var(--primary-color-hue), 75%, 60%);
 	--color-secondary: hsl(252, 100%, 90%);
 	--color-success: hsl(120, 95%, 65%);
 	--color-danger: hsl(0, 95%, 65%);
-	--color-dark: hsl(252, 30%, 17%);
+	--color-dark: hsl(252, 30%, var(--dark-color-lightness));
 	--color-black: hsl(252, 30%, 10%);
 
 	--border-radius: 2rem;
@@ -245,6 +249,7 @@ main .container .leftbar .profile {
 	box-shadow: 0 0 2rem hsl(var(--color-primary), 75%, 60%, 25%);
 	z-index: 8;
 	display: none;
+	color: var(--color-dark);
 }
 .leftbar .notification-popup::before {
 	content: '';
@@ -410,6 +415,7 @@ main .container .leftbar .profile {
 /* rightbar */
 
 main .container .rightbar {
+	/* height: max-content; */
 	position: sticky;
 	top: var(--sticky-top-right);
 	bottom: 0;
@@ -440,6 +446,7 @@ main .container .rightbar {
 .rightbar .messages .search-bar input[type='search'] {
 	background: transparent;
 	font-size: 0.8rem;
+	color: var(--color-dark);
 }
 
 .messages .search-bar input[type='search']::placeholder {
@@ -472,7 +479,7 @@ main .container .rightbar {
 .rightbar .messages .message {
 	display: flex;
 	align-items: flex-start;
-	margin: 1rem 0;
+	margin-top: 1rem;
 	gap: 1rem;
 }
 
@@ -508,6 +515,7 @@ main .container .rightbar {
 	background: var(--color-white);
 	padding: var(--card-padding);
 	border-radius: var(--card-border-radius);
+	margin-bottom: 1rem;
 }
 
 .rightbar .friend-requests .request .info {
@@ -532,14 +540,14 @@ main .container .rightbar {
 	height: 100vh;
 	z-index: 100;
 	font-size: 1rem;
-	display: flex;
+	display: none;
 	justify-content: center;
 	align-items: center;
 	position: fixed;
 	top: 0;
 	left: 0;
 	text-align: center;
-	/* font-size: 0.9rem; */
+	/* font-size: 1rem; */
 }
 
 .theme-customize .card {
@@ -547,6 +555,7 @@ main .container .rightbar {
 	padding: 2.5rem;
 	border-radius: var(--card-border-radius);
 	width: 50%;
+	box-shadow: 0 0 1rem var(--color-gray);
 }
 
 .theme-customize .card .header {
@@ -607,6 +616,10 @@ main .container .rightbar {
 	cursor: pointer;
 }
 
+.card .color .choose-color > span.active {
+	border: 3px solid var(--color-gray);
+}
+
 .card .color .choose-color > span:nth-child(1) {
 	background: hsl(252, 75%, 60%);
 }
@@ -621,7 +634,7 @@ main .container .rightbar {
 	background: hsl(152, 75%, 60%);
 }
 .card .color .choose-color > span:nth-child(5) {
-	background: hsl(102, 75%, 60%);
+	background: hsl(202, 75%, 60%);
 }
 
 .theme-customize .card .background {
@@ -650,7 +663,7 @@ main .container .rightbar {
 
 .card .background .choose-bg .bg-1 {
 	background-color: var(--color-white);
-	color: var(--color-black);
+	color: var(--color-dark);
 }
 
 .card .background .choose-bg .bg-2 {
@@ -658,12 +671,12 @@ main .container .rightbar {
 	color: var(--color-white);
 }
 
-.card .background .choose-bg .bg-2 {
-	background-color: hsl(252, 30%, 10%);
+.card .background .choose-bg .bg-3 {
+	background-color: hsl(252, 30%, var(--dark-color-lightness));
 	color: var(--color-white);
 }
 
-.card .background .choose-bg > div >span{
+.card .background .choose-bg > div > span {
 	width: 2rem;
 	height: 2rem;
 	border: 2px solid var(--color-gray);
